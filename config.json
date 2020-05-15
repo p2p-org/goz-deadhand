@@ -1,0 +1,18 @@
+{
+    "source_chain_id": "yourzone-1b",
+    "source_rpc": "http://127.0.0.1:26657/",
+    "source_blocktime_seconds": 6,
+    "destination_chain_id": "gameofzoneshub-1b",
+    "destination_rpc": "http://8.8.8.8:26657",
+    "relayer_bin": "~/go/bin/rly",
+    "relayer_home": "",
+    "height_lag": 10,
+    "clients": [
+        {
+            "client_id": "client_id",
+            "risk_margin_seconds": 30,
+            "gas": 90000,
+            "last_height": 0
+        }
+    ]
+}
