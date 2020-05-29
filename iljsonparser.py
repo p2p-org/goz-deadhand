@@ -1,5 +1,11 @@
 import ijson
 import pprint
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("json_path", nargs='?', default="events.json")
+args = parser.parse_args()
+
 
 def traverse(obj, index, parent):
     if isinstance(obj, dict):
