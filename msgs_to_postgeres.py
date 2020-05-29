@@ -30,7 +30,7 @@ try:
         sql = "INSERT INTO json_test (data) VALUES (%s)"
         cursor.execute(sql, (my_json,))
         if i%1000 == 0:
-            pos = f.tell()/filesize
+            pos = 100*f.tell()/filesize
             print(i, "%.2f"%pos)
         #print (cursor.fetchone()[0])
         i = i+1
