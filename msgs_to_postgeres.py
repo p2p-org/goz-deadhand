@@ -26,7 +26,9 @@ try:
     for msg in msgs:
         my_json = json.dumps(msg)
         sql = "INSERT INTO json_test (data) VALUES (%s)"
-        print(cursor.execute(sql, (my_json,)))
+        cursor.execute(sql, (my_json,))
+        if i%1000 == 0:
+            print(i)
         #print (cursor.fetchone()[0])
         i = i+1
 except Exception as e:
