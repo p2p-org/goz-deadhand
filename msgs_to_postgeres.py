@@ -22,12 +22,13 @@ first_occurence = {}
 f = open(args.json_path)
 msgs = ijson.items(f, '', multiple_values = True)
 i = 0
-#try: 
-for msg in msgs:
-    my_json = json.dumps(msg)
-    sql = "INSERT INTO json_test (data) VALUES (%s) returning data"
-    print(cursor.execute(sql, (my_json,)))
-    print (cursor.fetchone()[0])
-#except:
-#    pass
+try: 
+    for msg in msgs:
+        my_json = json.dumps(msg)
+        sql = "INSERT INTO json_test (data) VALUES (%s) returning data"
+        print(cursor.execute(sql, (my_json,)))
+        print (cursor.fetchone()[0])
+except:
+    pass
+conn.commit()
 print(i)
