@@ -22,7 +22,7 @@ for msg in msgs:
     if msg["network"] != args.zone:
         if msg['msg'][0]['event_ibc']:
             submsg = next(iter(dict(msg['msg'][0].get('event_ibc')).values()))
-            if submsg['data']['tx.height'] == str(args.height):
+            if submsg['data']['tx.height'][0] == str(args.height):
                 print(i)
                 pprint.pprint(msg)
     i = i + 1
