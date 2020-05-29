@@ -14,6 +14,17 @@ def traverse(obj, index, parent):
         return [traverse(elem, index, obj) for index, elem in enumerate(obj)]
     else:
         parent[index] = ""
+
+def traverse2(obj, index, parent):
+    if isinstance(obj, dict):
+        return {k: traverse(v, k, obj) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        if len(obj) > 0 and list[0] == "":
+            parent[index] = len(obj)
+        else:
+            return [traverse(elem, index, obj) for index, elem in enumerate(obj)]
+    else:
+        parent[index] = ""
         
 different_structures = []
 first_occurence = {}
@@ -25,6 +36,7 @@ try:
     for msg in msgs:
         msga = [msg]
         traverse(msg, 0 , msga)
+        traverse2(msg, 0 , msga)
         if msg not in different_structures:
             different_structures.append(msg)
             first_occurence[i] = msg
