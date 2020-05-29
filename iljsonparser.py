@@ -18,7 +18,7 @@ def traverse(obj, index, parent):
 different_structures = []
 first_occurence = {}
 
-f = open('events.json')
+f = open(args.json_path)
 msgs = ijson.items(f, '', multiple_values = True)
 i = 0
 try: 
