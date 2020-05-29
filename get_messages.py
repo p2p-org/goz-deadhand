@@ -4,9 +4,9 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("json_path", nargs='?', default="events.json")
-parser.add_argument("message_position", nargs='?', default=1)
-parser.add_argument("prefetch", nargs='?', default=1)
-parser.add_argument("postfetch", nargs='?',default=0)
+parser.add_argument("message_position", nargs='?', default=1, type=int)
+parser.add_argument("prefetch", nargs='?', default=1, type=int)
+parser.add_argument("postfetch", nargs='?',default=0, type=int)
 args = parser.parse_args()
 
 
