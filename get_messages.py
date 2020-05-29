@@ -26,5 +26,4 @@ for msg in msgs:
     i = i + 1
 #except:
 #    pass
-
-pprint.pprint(first_occurence)
+print(i)
