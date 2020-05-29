@@ -19,10 +19,10 @@ msgs = ijson.items(f, '', multiple_values = True)
 i = 0
 #try: 
 for msg in msgs:
-    if msg["network"] == args.zone:
+    if msg["network"] != args.zone:
         if msg['msg'][0]['event_ibc']:
-            submsg = dict(msg['msg'][0].get('event_ibc')).values[0]
-            if submsg['tx.height'] == str(height):
+            submsg = next(iter(dict(msg['msg'][0].get('event_ibc')).values()))
+            if submsg['data']['tx.height'] == str(args.height):
                 print(i)
                 pprint.pprint(msg)
     i = i + 1
