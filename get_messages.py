@@ -18,13 +18,13 @@ first_occurence = {}
 f = open(args.json_path)
 msgs = ijson.items(f, '', multiple_values = True)
 i = 0
-try: 
-    for msg in msgs:
-        if (i >= args.message_position - args.prefetch) and (i <= args.message_position + args.prefetch):
-            print(i)
-            pprint.pprint(msg)
-        i = i + 1
-except:
-    pass
+#try: 
+for msg in msgs:
+    if (i >= args.message_position - args.prefetch) and (i <= args.message_position + args.prefetch):
+        print(i)
+        pprint.pprint(msg)
+    i = i + 1
+#except:
+#    pass
 
 pprint.pprint(first_occurence)
