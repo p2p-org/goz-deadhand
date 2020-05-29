@@ -20,7 +20,7 @@ i = 0
 #try: 
 for msg in msgs:
     if msg["network"] == args.zone:
-        if msg['msg']['event_ibc']:
+        if msg['msg'][0]['event_ibc']:
             submsg = dict(msg['msg'].get('event_ibc')).values[0]
             if submsg['tx.height'] == str(height):
                 print(i)
