@@ -22,10 +22,10 @@ different_structures = []
 first_occurence = {}
 filesize = os.stat(args.json_path).st_size
 
-zipf = zipfile.ZipFile(args.json_path)
-f=zipf.open("logs/events.log.phase2a_part2_fixed")
 
-msgs = ijson.items(f, '', multiple_values = True)
+f=open(args.json_path)
+
+msgs = ijson.items(f, 'item', multiple_values = True)
 i = 0
 try: 
     for msg in msgs:
