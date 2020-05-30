@@ -30,11 +30,8 @@ i = 0
 try: 
     for msg in msgs:
         my_json = json.dumps(msg)
-        print(msg)
-        if(i == 5):
-            break
         sql = "INSERT INTO json_test (data) VALUES (%s)"
-        #cursor.execute(sql, (my_json,))
+        cursor.execute(sql, (my_json,))
         if i%1000 == 0:
 
             pos = 100*f.tell()/filesize
