@@ -16,7 +16,7 @@ different_structures = []
 first_occurence = {}
 
 f = open(args.json_path)
-msgs = ijson.items(f, '', multiple_values = True)
+msgs = ijson.items(f, 'item', multiple_values = True)
 i = 0
 #try: 
 for msg in msgs:
