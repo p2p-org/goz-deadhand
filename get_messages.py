@@ -20,6 +20,7 @@ msgs = ijson.items(f, '', multiple_values = True)
 i = 0
 #try: 
 for msg in msgs:
+    print(msg)
     if (i >= args.message_position - args.prefetch) and (i <= args.message_position + args.prefetch):
         print(i)
         pprint.pprint(msg)
